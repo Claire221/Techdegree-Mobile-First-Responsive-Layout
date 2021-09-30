@@ -20,7 +20,7 @@ img {
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #414141;
     text-align: center;
     margin-top: 4% ;
@@ -45,11 +45,9 @@ a:hover {
     border-bottom: solid 2px rgb(165, 165, 165);
     color: coral;
 }
-
 /* =======================
       Nav Styles
 ========================*/
-
 .navbar {
     display: flex;
     flex-direction: column;
@@ -59,7 +57,7 @@ a:hover {
 }
 
 .main-title {   
-    font-size: 2.25rem;
+    font-size: 2rem;
     padding: 3%;
 
 }
@@ -80,7 +78,6 @@ a:hover {
     text-align: center;
     background-color: rgb(236, 236, 236);
 }
-
 /* =======================
      Header Styles
 ========================*/
@@ -103,7 +100,6 @@ header {
 .hero-section p {
     max-width: 80%;
 }
-
 /* =======================
     Main Section Styles
 ========================*/
@@ -118,16 +114,23 @@ header {
     align-items: center;
 }
 
-.contact-section {
-    margin-top: 20%;
+.container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
-.contact-title {
-    margin: 4%;
-}
-
-.contact-info {
+.flex-item {
+    width: 100%;
+    height: auto;
     margin: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* =======================
@@ -160,46 +163,70 @@ header {
 
 .fab {
     color: lightslategray;
-  
+   
 }
 
 .fab:hover,
 .fab:active {
     color: coral;
-}
+} 
+
 
 /* =======================
       Footer Styles
 ========================*/
+
 hr {
     background-color: #fff;
     padding: 0;
     width: 90%;
     margin: 20% auto 4%;
 }
-.footer-div {
+
+.footer-div,
+.contact-section {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.contact-section {
+    flex-direction: column;
+}
+
 .links {
     width: 50%;
     display: flex;
-    justify-content: space-between;
     margin: 0 3%;
+   
+}
 
+.footer-div p {
+    font-size: 1.2rem;
+    padding: 0 5%;
+    text-align: left;
+    width: 50%;
 }
 
 .footer-div a {
     text-decoration: none;
+    font-size: 1rem;
+    padding: 0;
+    text-align: left;
+   
+}
+
+.links {
+    width: 50%;
 }
 
 .hide {    
     display: inline;
+    width: 100%;
+    text-align: right;
 }
 
-#show {
+.show {
     display: none;
 }   
 
@@ -207,7 +234,6 @@ hr {
 /* =======================
       Media queries
 ========================*/
-
 @media screen and (min-width:768px) {
 
     /* =======================
@@ -248,55 +274,58 @@ hr {
     /* =======================
     Main Section Styles
     ========================*/
-    .main-section{
-        display: flex;
-        flex-direction: row;
-        flex-wrap:wrap;
+
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .flex-item img{
+        width: 90%;
+        margin: 0;
+        padding: 0;
     }
 
     .portfolio-title {
         margin: 3% 0;
     }
 
-    .project-div {
-        flex: 50%;
-        margin: 0 -8%;
-        padding: -5%;
-
-    }
-
     p {
-         width: 70%;
+         width: 80%;
+    }
+    
+    .flex-item {
+        width: 45%;
+        height: 100%;
     }
 
-    .skills-section h3 {
-        display: block;
+    .flex-item:last-child p:last-child {
+        padding: 4% 0;
     }
+    
      /* =======================
        Skills Styles
     ========================*/
 
     .skills-title{
-         background-color: rgb(236, 236, 236);
-         margin-top: 5%;
-         padding-top: 5%;;
-    }       
-
-    .skills-section {
-        width: 100%;
-        margin: 0;
-        flex-direction: row;
         background-color: rgb(236, 236, 236);
-        flex-wrap: wrap;
-    }
-    
-       
-    .skills-div {
-        flex-basis: calc(50% - 40px);  
+        margin-top: 5%;
+        padding-top: 5%;;
+   }       
+
+   .skills-section {
+       margin: 0;
+       flex-direction: row;
+       flex-wrap: wrap;
+   }
+   
+      
+   .skills-div {
+       flex-basis: calc(50% - 20px);  
+       padding: 3% 0;
     }
 
-
-     /* =======================
+    /* =======================
        Footer Styles
     ========================*/
     .contact-section {
@@ -317,63 +346,38 @@ hr {
         margin: 1% 2%;
     }
 
-     /* =======================
-        Footer Section Styles
-    ========================*/
-
     hr {
         margin: 3% auto 3%;
     }
 
-    .footer-div p,
-    .footer-div a {
-        margin: 0;
-        padding: 2% 0;
-
-    }
-
-    .footer-div a {
-        text-decoration: none;
+    .footer-div li {
+        margin: 5%;
     }
 
     .hide {
         display: none;
     }
 
-    #show {
+    .show {
         display: block;        
     } 
 
+
 }
 
-
-
-
 @media screen and (min-width: 1024px) {
+    body {
+        overflow-x: hidden;
+    }
+
     img {
         width: 50%;
     }
+
      /* =======================
       header Styles
     ======================== */
-    header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: rgb(236, 235, 235);
-
-        box-shadow: 2px 2px 10px rgb(190, 190, 190);
-    }
-
     
-    header p {
-        width: 50%;
-        
-
-    }
-
-
     .navbar {
         flex-direction: row;
         width: 95%;
@@ -389,59 +393,42 @@ hr {
         justify-content: flex-end;
     }
     
-    .nav-links li {
-        background-color: rgb(236, 235, 235);
 
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     .hero-section {
         justify-content: space-between;
-        align-items: center;
+    }
+
+    header p {
+        width: 50%;
     }
 
     .profile-picture {
         width: 30%;
     }
-     /* =======================
-        Main Section Styles
+
+       /* =======================
+    Main Section Styles
     ========================*/
-    .main-section {
-        width: 90%;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-    }
+
     
     .flex-item {
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-    }   
-
-    /* =======================
-        Skills Styles
-        ========================*/
-
-    .skills-title{
-            background-color: rgb(236, 236, 236);
-            margin-top: 5%;
-            padding-top: 5%;;
-    }   
- 
-    .skills-section {
-        width: 100%;
-        margin: 0;
-        flex-direction: row;
-        background-color: rgb(236, 236, 236);
-        flex-wrap: wrap;
-    
+        width: 25%;
     }
-    
-        
+
+     /* =======================
+        skills Styles
+    ========================*/
     .skills-div {
-        flex-basis: 20%;  
+        margin: 3% 0;
         padding: 0;
-        margin: 5% 0;
+        flex-basis: calc(25% - 40px);  
     }
 
     /* =======================
@@ -449,12 +436,11 @@ hr {
     ========================*/
     .contact-section {
         margin-top: 2%;
-
     }
+
 
     .contact-paragraph {
         margin: 0;
-        padding: 0;
     }
 
      /* =======================
@@ -462,26 +448,39 @@ hr {
     ========================*/
 
     hr {
+        padding: 0;
+        width: 90%;
         margin: 0 auto;
     }
 
-    .footer-div p,
-    .footer-div a {
+    .footer-div {
+        justify-content: space-between;
+    }
+
+    .footer-div > p{
         margin: 0;
-        padding: 1%;
-
+        padding: 0;
+        margin-left: -360px;
     }
 
-    .hide {
-        display: none;
+    .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    #show {
-        display: block;     
+    .footer-div p {
+        margin-left: 5%;
+        font-size: 1.5rem;
+    }
+
+    .footer-div a {
+        font-size: 1.5rem;
+    }
+
+    .show {   
         padding: 2% 0;
         margin: 0;   
     } 
 
 } 
-
-
